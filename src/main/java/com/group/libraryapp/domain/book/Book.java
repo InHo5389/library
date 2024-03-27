@@ -1,23 +1,28 @@
-package com.group.libraryapp.domain;
+package com.group.libraryapp.domain.book;
 
-public class User {
+import javax.persistence.*;
 
+@Entity
+public class Book {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false,length = 255)
     private String name;
-    private Integer age;
 
-    public User(String name, Integer age) {
+    protected Book() {
+    }
+
+    public Book(String name) {
         if (name == null || name.isBlank()) {
             throw new IllegalArgumentException(String.format("잘못된 name(%s)가 들어왔습니다.", name));
         }
         this.name = name;
-        this.age = age;
     }
 
     public String getName() {
         return name;
-    }
-
-    public Integer getAge() {
-        return age;
     }
 }
