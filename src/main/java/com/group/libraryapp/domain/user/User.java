@@ -1,15 +1,16 @@
 package com.group.libraryapp.domain.user;
 
 import com.group.libraryapp.domain.user.loanhistory.UserLoanHistory;
+import jakarta.persistence.*;
 
-import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class User {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false,length = 20)
