@@ -1,6 +1,6 @@
 package com.group.libraryapp.dto.user.response;
 
-import com.group.libraryapp.domain.user.User;
+import com.group.libraryapp.domain.user.Person;
 
 public class UserResponse {
     private long id;
@@ -15,12 +15,12 @@ public class UserResponse {
 
 
 
-    public UserResponse(long id, User user) {
+    public UserResponse(long id, Person user) {
         this.id = id;
         this.name = user.getName();
         this.age = user.getAge();
     }
-    public UserResponse( User user) {
+    public UserResponse( Person user) {
         this.id = user.getId();
         this.name = user.getName();
         this.age = user.getAge();

@@ -2,8 +2,7 @@ package com.group.libraryapp.service.book;
 
 import com.group.libraryapp.domain.UserRepository;
 import com.group.libraryapp.domain.book.Book;
-import com.group.libraryapp.domain.user.User;
-import com.group.libraryapp.domain.user.loanhistory.UserLoanHistory;
+import com.group.libraryapp.domain.user.Person;
 import com.group.libraryapp.dto.book.request.BookCreateRequest;
 import com.group.libraryapp.dto.book.request.BookLoanRequest;
 import com.group.libraryapp.dto.book.request.BookReturnRequest;
@@ -39,7 +38,7 @@ public class BookService {
             throw new IllegalArgumentException("대출되어 있는 책입니다.");
         }
 
-        User user = userRepository.findByName(request.getUserName())
+        Person user = userRepository.findByName(request.getUserName())
                 .orElseThrow(IllegalArgumentException::new);
 
         user.loanBook(request.getBookName());
@@ -47,7 +46,7 @@ public class BookService {
 
     @Transactional
     public void returnBook(BookReturnRequest request) {
-        User user = userRepository.findByName(request.getUserName())
+        Person user = userRepository.findByName(request.getUserName())
                 .orElseThrow(IllegalArgumentException::new);
 
         user.returnBook(request.getBookName());

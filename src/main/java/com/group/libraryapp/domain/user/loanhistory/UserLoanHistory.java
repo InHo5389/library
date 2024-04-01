@@ -1,6 +1,6 @@
 package com.group.libraryapp.domain.user.loanhistory;
 
-import com.group.libraryapp.domain.user.User;
+import com.group.libraryapp.domain.user.Person;
 
 import jakarta.persistence.*;
 
@@ -12,15 +12,15 @@ public class UserLoanHistory {
     private Long id;
 
     @ManyToOne
-    private User user;
+    private Person person;
     private String bookName;
     private boolean isReturn;
 
     public UserLoanHistory() {
     }
 
-    public UserLoanHistory(User user, String bookName) {
-        this.user = user;
+    public UserLoanHistory(Person person, String bookName) {
+        this.person = person;
         this.bookName = bookName;
         this.isReturn = false;
     }

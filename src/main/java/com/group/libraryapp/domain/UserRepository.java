@@ -1,12 +1,12 @@
 package com.group.libraryapp.domain;
 
-import com.group.libraryapp.domain.user.User;
+import com.group.libraryapp.domain.user.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
-public interface UserRepository extends JpaRepository<User,Long> {
+public interface UserRepository extends JpaRepository<Person,Long> {
 
-    Optional<User> findByName(String name);
+    Optional<Person> findByName(String name);
 
 }

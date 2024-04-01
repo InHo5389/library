@@ -1,6 +1,6 @@
 package com.group.libraryapp.service.user;
 
-import com.group.libraryapp.domain.user.User;
+import com.group.libraryapp.domain.user.Person;
 import com.group.libraryapp.domain.UserRepository;
 import com.group.libraryapp.dto.user.request.UserCreateRequest;
 import com.group.libraryapp.dto.user.request.UserUpdateRequest;
@@ -22,7 +22,7 @@ public class UserService {
 
     @Transactional
     public void updateUser(UserUpdateRequest request) {
-        User user = userRepository.findById(request.getId())
+        Person user = userRepository.findById(request.getId())
                 .orElseThrow(() -> new IllegalArgumentException());
 
         user.updateName(request.getName());
@@ -30,7 +30,7 @@ public class UserService {
 
     @Transactional
     public void deleteUser(String name){
-        User user = userRepository.findByName(name)
+        Person user = userRepository.findByName(name)
                 .orElseThrow(IllegalArgumentException::new);
 
         userRepository.delete(user);
@@ -38,7 +38,7 @@ public class UserService {
 
     @Transactional
     public void saveUser(UserCreateRequest request){
-        userRepository.save(new User(request.getName(), request.getAge()));
+        userRepository.save(new Person(request.getName(), request.getAge()));
     }
 
     @Transactional(readOnly = true)
