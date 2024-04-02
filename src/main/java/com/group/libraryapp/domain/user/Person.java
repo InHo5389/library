@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class User {
+public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,13 +17,13 @@ public class User {
     private String name;
     private Integer age;
 
-    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL,orphanRemoval = true)
+    @OneToMany(mappedBy = "person",cascade = CascadeType.ALL,orphanRemoval = true)
     private List<UserLoanHistory> userLoanHistories = new ArrayList<>();
 
-    protected User() {
+    protected Person() {
     }
 
-    public User(String name, Integer age) {
+    public Person(String name, Integer age) {
         if (name == null || name.isBlank()) {
             throw new IllegalArgumentException(String.format("잘못된 name(%s)가 들어왔습니다.", name));
         }
