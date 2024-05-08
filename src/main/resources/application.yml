@@ -1,12 +1,23 @@
 spring:
   profiles:
-    active: local
+    active: blue
     group:
-      local: local,common
-      blue: blue, common
-      green: green, common
+      local: local
+      blue: blue
+      green: green
 server:
   env: blue
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: localhost
+server:
+  port: 8080
+  serverAddress: 3.37.1.113
+  serverName: local_server
 
 ---
 
