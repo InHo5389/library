@@ -10,4 +10,8 @@ public class HelloController {
     public String hello(){
         return "hello1223241";
     }
+    @GetMapping("/star")
+    public String star(){
+        return "*********************";
+    }
 }
