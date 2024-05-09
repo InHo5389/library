@@ -12,6 +12,6 @@ public class HelloController {
     }
     @GetMapping("/star")
     public String star(){
-        return "*********************";
+        return "*********************2";
     }
 }
