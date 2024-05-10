@@ -39,4 +39,11 @@ public class HealthCheckController {
         // 어떤 서버가 켜져 있는지
         return ResponseEntity.ok(env);
     }
+
+    @GetMapping("/envv")
+    public ResponseEntity<?> getEnvv(){
+        // 정보를 넣어서 줄거임 얘가 그린인지 블루인지
+        // 어떤 서버가 켜져 있는지
+        return ResponseEntity.ok(env);
+    }
 }
