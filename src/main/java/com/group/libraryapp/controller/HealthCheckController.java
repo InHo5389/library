@@ -47,6 +47,7 @@ public class HealthCheckController {
         // 정보를 넣어서 줄거임 얘가 그린인지 블루인지
         // 어떤 서버가 켜져 있는지
         log.info("HealthCheckController.logTest()");
+        System.out.println("test test test test test");
         return ResponseEntity.ok(env);
     }
 }
