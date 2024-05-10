@@ -1,5 +1,6 @@
 package com.group.libraryapp.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
+@Slf4j
 @RestController
 public class HealthCheckController {
 
@@ -44,6 +46,7 @@ public class HealthCheckController {
     public ResponseEntity<?> getEnvv(){
         // 정보를 넣어서 줄거임 얘가 그린인지 블루인지
         // 어떤 서버가 켜져 있는지
+        log.info("HealthCheckController.logTest()");
         return ResponseEntity.ok(env);
     }
 }
