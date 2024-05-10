@@ -39,4 +39,10 @@ public class HealthCheckController {
         // 어떤 서버가 켜져 있는지
         return ResponseEntity.ok(env);
     }
+
+    @GetMapping("/envv")
+    public ResponseEntity<?> getEnvv(){
+        System.out.println("test test test test test");
+        return ResponseEntity.ok(env);
+    }
 }
